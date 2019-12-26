@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
 
 public class ActionActivity extends AppCompatActivity {
     ArrayList<String> stringArrayList;
