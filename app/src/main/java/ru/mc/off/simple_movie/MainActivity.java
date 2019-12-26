@@ -22,8 +22,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener ,
-View.OnFocusChangeListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     //LIST OF ARRAY STRINGS WHICH WILL SERVE AS LIST ITEMS
     ArrayList<String> listItems=new ArrayList<String>();
@@ -70,7 +69,6 @@ View.OnFocusChangeListener{
 
         timerText = findViewById(R.id.timerText);
 
-        timerText.setOnFocusChangeListener(this);
 
         spinner.setOnItemSelectedListener(itemSelectedListener);
 
@@ -84,15 +82,6 @@ View.OnFocusChangeListener{
 
         listView.setAdapter(adapterList);
 
-    }
-
-    @Override
-    public void onFocusChange(View v, boolean hasFocus) {
-        if (hasFocus){
-            timerText.setHint(R.string.timerEditHint);
-        } else{
-            timerText.setHint("");
-        }
     }
 
     @Override
