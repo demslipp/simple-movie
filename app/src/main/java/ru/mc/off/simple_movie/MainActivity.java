@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -74,6 +75,7 @@ View.OnFocusChangeListener{
         spinner.setOnItemSelectedListener(itemSelectedListener);
 
         findViewById(R.id.button).setOnClickListener(this);
+        findViewById(R.id.button2).setOnClickListener(this);
 
         ListView listView = findViewById(R.id.list);
 
@@ -94,9 +96,23 @@ View.OnFocusChangeListener{
     }
 
     @Override
-    public void onClick(View view){
-        Toast.makeText(getApplicationContext(), timerText.getText() + " " + spinner.getSelectedItem().toString(),Toast.LENGTH_LONG).show();
-        addItem();
+    public void onClick(View view) {
+        switch (view.getId()){
+            case (R.id.button): {
+            Toast.makeText(getApplicationContext(), timerText.getText() + " " + spinner.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+            addItem();
+            }
+            break;
+        }
+        switch (view.getId()){
+            case (R.id.button2): {
+                Intent intent = new Intent(this, ActionActivity.class);
+                intent.putExtra("list", listItems);
+                //System.out.println("Pederau mdataBases.get(position)" + mdataBases.get(position));
+                startActivity(intent);
+            }
+            break;
+        }
     }
 
     public void setImage(int position){
@@ -146,7 +162,7 @@ View.OnFocusChangeListener{
 
 
     @Override
-    public boolean onOptionsItemSelected (@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected (@NonNull MenuItem  item) {
         switch (item.getItemId()) {
             case R.id.delete_last:
                 deleteLast();
