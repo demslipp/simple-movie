@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pic_array">
+        <item>Gentleman</item>
+        <item>Businessman</item>
+        <item>Notebook</item>
+        <item>Danger</item>
+        <item>taxi_driver</item>
+    </string-array>
+</resources>
